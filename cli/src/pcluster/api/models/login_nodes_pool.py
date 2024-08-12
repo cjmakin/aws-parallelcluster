@@ -27,6 +27,8 @@ class LoginNodesPool(Model):
 
         :param status: The status of this LoginNodesPool.  # noqa: E501
         :type status: LoginNodesState
+        :param pool_name: The pool_name of this LoginNodesPool.  # noqa: E501
+        :type pool_name: str
         :param address: The address of this LoginNodesPool.  # noqa: E501
         :type address: str
         :param scheme: The scheme of this LoginNodesPool.  # noqa: E501
@@ -38,6 +40,7 @@ class LoginNodesPool(Model):
         """
         self.openapi_types = {
             "status": LoginNodesState,
+            'pool_name': str,
             "address": str,
             "scheme": str,
             "healthy_nodes": int,
@@ -46,6 +49,7 @@ class LoginNodesPool(Model):
 
         self.attribute_map = {
             "status": "status",
+            'pool_name': 'poolName',
             "address": "address",
             "scheme": "scheme",
             "healthy_nodes": "healthyNodes",
@@ -53,6 +57,7 @@ class LoginNodesPool(Model):
         }
 
         self._status = status
+        self._pool_name = pool_name
         self._address = address
         self._scheme = scheme
         self._healthy_nodes = healthy_nodes
@@ -91,6 +96,27 @@ class LoginNodesPool(Model):
             raise ValueError("Invalid value for `status`, must not be `None`")  # noqa: E501
 
         self._status = status
+
+    @property
+    def pool_name(self):
+        """Gets the pool_name of this LoginNodesPool.
+
+
+        :return: The pool_name of this LoginNodesPool.
+        :rtype: str
+        """
+        return self._pool_name
+
+    @pool_name.setter
+    def pool_name(self, pool_name):
+        """Sets the pool_name of this LoginNodesPool.
+
+
+        :param pool_name: The pool_name of this LoginNodesPool.
+        :type pool_name: str
+        """
+
+        self._pool_name = pool_name
 
     @property
     def address(self):
